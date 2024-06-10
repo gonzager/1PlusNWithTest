@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "a27af096-4a15-455e-bfb6-4abb1a747804",
+		"name": "N+1 Queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1080184",
+		"_collection_link": "https://universal-moon-687890.postman.co/workspace/Talks~6b5b1bb4-f270-4d02-9e4c-18f19655aa27/collection/1080184-a27af096-4a15-455e-bfb6-4abb1a747804?action=share&source=collection_link&creator=1080184"
+	},
+	"item": [
+		{
+			"name": "productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}:{{port}}/productos?page=0&size=3&sort=nombre",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"productos"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "sort",
+							"value": "nombre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fabricantes/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}:{{port}}/fabricantes/:id",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"fabricantes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "125"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fabricantes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proto}}://{{host}}:{{port}}/fabricantes",
+					"protocol": "{{proto}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"fabricantes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "proto",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "8081",
+			"type": "string"
+		}
+	]
+}
