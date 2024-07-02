@@ -9,14 +9,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProductoServiceImpl implements ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
+
     @Override
-    public Page<Producto> findAll(Pageable pageable) {
-        return productoRepository.findAll(pageable);
+    @Transactional(Transactional.TxType.NEVER)
+    public Optional<Producto> findById(Long id) {
+        return productoRepository.findById(id);
     }
 
     @Override
