@@ -197,3 +197,16 @@ Aún cuando hay que traer 1000 productos, la deserialización de la base hacia e
 
 ## Collection de Postman
 Dentro del proyecto queda una [collection de postman](./N+1Queries.postman_collection.json) para poder probar. 
+
+
+## Tests unitarios incluyendo Coverage con Jacoco
+
+Para ejecutar los tests incluídos en este repo, con informe de cobertura:
+
+`mvn verify`
+
+## Mutation tests
+
+Para ejecutar los mutation tests:
+
+`mvn org.pitest:pitest-maven:mutationCoverage`
