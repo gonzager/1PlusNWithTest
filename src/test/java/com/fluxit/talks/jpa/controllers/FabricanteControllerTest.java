@@ -52,7 +52,8 @@ class FabricanteControllerTest {
                 .andExpect(jsonPath("$.id").value(fabricante.getId().toString()))
                 .andExpect(jsonPath("$.fabricante").value(fabricante.getNombre()))
                 .andExpect(jsonPath("$.categoria").value("MUSICA"))
-                .andExpect(jsonPath("$.productos").isEmpty());
+                .andExpect(jsonPath("$.productos").isArray())
+                .andExpect(jsonPath("$.productos", hasSize(0)));
     }
 
     @Test
