@@ -10,4 +10,5 @@ public interface FabricanteService {
     List<IFabricanteDTO> findAllWithProducto(Long id);
     List<Fabricante> findAll();
     Optional<Fabricante> findById(Long id);
+    Fabricante save(Fabricante fabricante);
 }

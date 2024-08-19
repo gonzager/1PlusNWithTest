@@ -3,6 +3,7 @@ package com.fluxit.talks.jpa.controllers;
 import com.fluxit.talks.jpa.dtos.FabricanteCategoriaDTO;
 import com.fluxit.talks.jpa.dtos.FabricanteDTO;
 import com.fluxit.talks.jpa.dtos.ProductoSinFabricanteDTO;
+import com.fluxit.talks.jpa.exceptions.NotFoundException;
 import com.fluxit.talks.jpa.services.impl.FabricanteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,7 @@ public class FabricanteController {
     @GetMapping("/{id}")
     public FabricanteDTO findAllWithProducto(@PathVariable Long id) {
         var fabricante = fabricanteServiceImpl.findById(id).orElseThrow(
-                () -> new NoSuchElementException("Fabricante no encontrado")
+                () -> new NotFoundException("Fabricante no encontrado")
         );
         var fabricantesConProductos = fabricanteServiceImpl.findAllWithProducto(id);
         var productosDelFabricante = fabricantesConProductos.stream().map(f ->

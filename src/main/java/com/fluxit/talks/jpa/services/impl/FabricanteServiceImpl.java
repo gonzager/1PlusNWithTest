@@ -29,4 +29,9 @@ public class FabricanteServiceImpl implements FabricanteService {
     public Optional<Fabricante> findById(Long id) {
         return fabricanteRepository.findById(id);
     }
+
+    @Override
+    public Fabricante save(Fabricante fabricante){
+        return fabricanteRepository.save(fabricante);
+    }
 }
