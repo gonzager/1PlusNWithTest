@@ -11,4 +11,5 @@ public interface FabricanteService {
     List<Fabricante> findAll();
     Optional<Fabricante> findById(Long id);
     Fabricante save(Fabricante fabricante);
+    void deletaAll();
 }

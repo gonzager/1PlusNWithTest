@@ -34,4 +34,9 @@ public class FabricanteServiceImpl implements FabricanteService {
     public Fabricante save(Fabricante fabricante){
         return fabricanteRepository.save(fabricante);
     }
+
+    @Override
+    public void deletaAll() {
+        fabricanteRepository.deleteAll();
+    }
 }
